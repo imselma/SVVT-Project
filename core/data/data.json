@@ -1,0 +1,20 @@
+{
+    "url": {
+        "home_page": "https://cineplexx.ba/"
+    },
+    "data":{
+        "email": "filmovi123@gmail.com"
+    },
+    "credentials": {
+        "name": "Amina",
+        "name1": "Selma",
+        "last_name": "Meric",
+        "lasr_name1": "Imsirovic",
+        "password": "pass123"
+    },
+    "verification_message": {
+        "registartion_message": "Your account has been created."
+    }
+
+
+}
