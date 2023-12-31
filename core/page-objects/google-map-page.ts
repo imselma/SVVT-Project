@@ -3,16 +3,15 @@ import BasePage from "./base-page";
 import { readFileSync } from "fs";
 import * as path from "path";
 
-
 const dataFilePath = path.resolve(__dirname, "../data/data.json");
 const testData = JSON.parse(readFileSync(dataFilePath, "utf8"));
 
-export class FreeParkingPage extends BasePage {
+export class GoogleMapLocation extends BasePage {
 
     private cinema=By.xpath('//li[@class="sc-frDJqD l-header-nav__item eCXZFJ"]//span[@class="_with-chevron"]');
-    private cinemSarajevo=By.className("l-sublist__link"); 
-    private youtubelink = By.css('a[href*="youtube.com"]');
-    private youtubeText=By.xpath('//h1[@class="style-scope ytd-watch-metadata"]');
+    private cinemSarajevo=By.className("l-sublist__link");   
+    private mapSearch=By.className("s-cinema-details__address-btn-map");
+    private map=By.className("gm-style");
 
     constructor(driver: WebDriver) {
         super(driver);
@@ -23,14 +22,10 @@ export class FreeParkingPage extends BasePage {
     async clickCinemaSarajevo() {
         await this.findElementAndClick(this.cinemSarajevo);
     }
-    async parking() {
-        
-        await this.findElementAndClick(this.youtubelink);
-    }
-    
-    async parkingConfirmation() {
-        await this.findElementAndClick(this.youtubeText);
-    }
-    
-    
+    async findMap() {
+        await this.findElementAndClick(this.mapSearch);
+    }   
+    async mapLocation() {
+        await this.findElement(this.map);
+    }  
 }
