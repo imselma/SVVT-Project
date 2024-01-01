@@ -7,7 +7,7 @@ import * as path from "path";
 const dataFilePath = path.resolve(__dirname, "../data/data.json");
 const testData = JSON.parse(readFileSync(dataFilePath, "utf8"));
 
-export class ReservednAndBoughtTicketsPage extends BasePage {
+export class ReservedAndBoughtTicketsPage extends BasePage {
 
     private profile = By.xpath('//div[@class="sc-cHGsZl header__logged dJEtQg"]//span[@class="_with-chevron"]'); 
     private mytickets = By.xpath('//div[@class="sc-kgAjT header__control dTZgov"]//div[@class="sc-cHGsZl header__logged dJEtQg _hover"]//div[@class="sc-kvZOFW l-sublist gCXROS"]//ul[@class="sc-eHgmQL menu fibqHV"]//li[2]//a[@class="menu__link"]');

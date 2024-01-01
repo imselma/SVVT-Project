@@ -4,7 +4,7 @@ import { createDriver, quitDriver} from "../core/config/driver-setup";
 import { readFileSync } from "fs";
 import * as path from "path";
 import { LoginPage } from "../core/page-objects/login-page";
-import { ReservedAndBoughtTicketsPage } from "../core/page-objects/reserved-and-bought-tickets-page";
+import { LogoutPage } from "../core/page-objects/logout-page";
 
 const dataFilePath = path.resolve(__dirname, "../core/data/data.json");
 const testData = JSON.parse(readFileSync(dataFilePath, "utf8"));
@@ -12,26 +12,24 @@ const testData = JSON.parse(readFileSync(dataFilePath, "utf8"));
 let driver: WebDriver;
 let homePage: HomePage;
 let loginPage: LoginPage;
-let reservedandboughttickets : ReservedAndBoughtTicketsPage;
+let logout : LogoutPage;
 
 beforeAll(async () => {
     driver = await createDriver(testData.url.home_page);
     homePage = new HomePage(driver);
     loginPage = new LoginPage(driver);
-    reservedandboughttickets = new ReservedAndBoughtTicketsPage(driver);
+    logout = new LogoutPage(driver);
 },10000);
 
-test("reserved and bought tickets", async () => {
+test("logout", async () => {
     await homePage.navigateToHomePage();
     await homePage.clickInButton();
     await loginPage.enterEmail();
     await loginPage.enterPassword();
     await loginPage.clickLogin();
-    await reservedandboughttickets.findprofile();
-    await reservedandboughttickets.findmytickets();
-    await reservedandboughttickets.findCinema();
-    await reservedandboughttickets.specificCinema();
-    await reservedandboughttickets.checkText();
+    await logout.findprofile();
+    await logout.findlogout();
+    await homePage.clickInButton();
 },80000);
 
 afterAll(async () => {
