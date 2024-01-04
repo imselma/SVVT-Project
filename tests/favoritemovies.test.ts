@@ -39,6 +39,6 @@ test("favorite movie", async () => {
 },40000);
 
 
-/*afterAll(async () => {
+afterAll(async () => {
     await quitDriver(driver);
-},10000);*/
+},10000);

@@ -40,10 +40,11 @@ test("ticket reservation", async () => {
     await reservationOfTicketPage.clickPlusButton();
     await reservationOfTicketPage.clickNextButton1();
     await reservationOfTicketPage.clickSeatChoose();
-    await reservationOfTicketPage.clickNextButton2();
+    await reservationOfTicketPage.clickFinalButton();
+    
 },40000);
 
 
-/*afterAll(async () => {
+afterAll(async () => {
     await quitDriver(driver);
-},10000);*/
+},10000);
