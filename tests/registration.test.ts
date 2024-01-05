@@ -32,10 +32,9 @@ test("user registration", async () => {
     await registrationPage.clickOnBirthMonth();
     await registrationPage.clickOnBirthDay();
     await registrationPage.clickOnOkButton();
-    await registrationPage.clickGender();
-   /* await registrationPage.clickGenderSpecific();
+    //await registrationPage.clickGender();
+    //await registrationPage.clickGenderSpecific();
     await registrationPage.clickCinema();
-    await registrationPage.clickGenderSpecific();*/
 },200000);
 
 

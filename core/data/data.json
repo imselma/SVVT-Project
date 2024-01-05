@@ -8,7 +8,8 @@
     "credentials": {
         "name": "Ajša",
         "last_name": "Mašović",
-        "password": "Amina123"
+        "password": "Amina123",
+        "movie": "Čuvari formule"
     },
     "verification_message": {
         "registartion_message": "Your account has been created."
