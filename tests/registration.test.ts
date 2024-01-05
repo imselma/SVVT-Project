@@ -24,6 +24,7 @@ beforeAll(async () => {
 
 test("user registration", async () => {
     await homePage.navigateToHomePage();
+    await registrationPage.allowCookies();
     await homePage.clickRegistrationButton();
     await registrationPage.enterName();
     await registrationPage.enterSurname();

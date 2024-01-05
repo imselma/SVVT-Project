@@ -1,4 +1,6 @@
 import { By, WebDriver, WebElement, until } from "selenium-webdriver";
+const { Key } = require('selenium-webdriver');
+
 export default class BasePage {
     protected driver: WebDriver;
 
@@ -6,6 +8,12 @@ export default class BasePage {
     constructor(driver: WebDriver) {
         this.driver = driver;
     }
+
+    async clear (selector: By){
+        const element = await this.findElement(selector);
+        await element.sendKeys(Key.chord(Key.CONTROL, 'a'), Key.BACK_SPACE);  //sendKeys(Key.chord(Key.CONTROL, 'a') -> selects all text  Key.BACK_SPACE -> deletes the text
+    }
+
     async getTitle(){
         return await this.driver.getTitle();
     }

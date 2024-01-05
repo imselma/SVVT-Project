@@ -22,6 +22,7 @@ test("search movie", async () => {
 
     await searchMovie.clickOnSearchIcon();
     await searchMovie.inputText();
+    await searchMovie.confirmMovieText();
 
 }, 10000)
 

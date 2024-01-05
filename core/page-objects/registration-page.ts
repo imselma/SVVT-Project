@@ -9,6 +9,7 @@ const testData = JSON.parse(readFileSync(dataFilePath, "utf8"));
 
 export class RegistrationPage extends BasePage {
 
+    private cookiesButton = By.xpath('//div[@class="b-cookies-agreement__buttons"]//button[@class="sc-bdVaJa cvcMub"]');
     private inputNameField = By.xpath('//div[@class="f-default__field firstName"]//div[@class="sc-Rmtcm f-default__row eAoJwr"]//input[@class="sc-csuQGl f-default__field jTRgec"]');
     private inputSurnameField = By.xpath('//div[@class="f-default__field lastName"]//div[@class="sc-Rmtcm f-default__row eAoJwr"]//input[@class="sc-csuQGl f-default__field jTRgec"]');
     private inputBirthDateField = By.xpath('//div[@class="f-default__field birth"]//div[@class="sc-Rmtcm f-default__row eAoJwr"]');
@@ -22,6 +23,11 @@ export class RegistrationPage extends BasePage {
     constructor(driver: WebDriver) {
         super(driver);
     }
+
+    async allowCookies() {
+        await this.findElementAndClick(this.cookiesButton);
+    }
+    
     async enterName() {
         await this.fillInputField(this.inputNameField, testData.credentials.name);
     }
