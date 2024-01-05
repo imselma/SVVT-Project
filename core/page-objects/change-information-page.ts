@@ -13,7 +13,6 @@ export class ChangeInformation extends BasePage {
     private mojNalogField = By.xpath('//div[@class="sc-kgAjT header__control dTZgov"]//div[@class="sc-cHGsZl header__logged dJEtQg _hover"]//div[@class="sc-kvZOFW l-sublist gCXROS"]//ul[@class="sc-eHgmQL menu fibqHV"]//li[1]//a[@class="menu__link"]');
     private editButton = By.className("b-head__link");
     private firstNameField = By.id("firstName");
-    private cookiesButton = By.xpath('//div[@class="b-cookies-agreement__buttons"]//button[@class="sc-bdVaJa cvcMub"]');
     private submitButton = By.className("sc-bdVaJa cvcMub");
     private backButton = By.className("s-account__title-link-back");
    // private firstName = By.xpath('//div[@class="b-head__inner"]//p[@class="sc-krvtoX iUcteS"]'); Bude 1/1 ali nece da ga pronadje kad runam
@@ -22,11 +21,6 @@ export class ChangeInformation extends BasePage {
     constructor(driver: WebDriver) {
         super(driver);
     }
-
-    async allowCookies() {
-        await this.findElementAndClick(this.cookiesButton);
-    }
-
 
     async navigateToProfileIcon() {
         await this.findElementAndClick(this.profileIcon);

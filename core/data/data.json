@@ -1,16 +1,21 @@
 {
     "url": {
-        "home_page": "https://cineplexx.ba/"
+        "home_page": "https://cineplexx.ba/",
+        "ig_url": "https://www.instagram.com/cineplexx_sarajevo/"
     },
     "data":{
-        "email": "aminameric7@gmail.com"
+        "email": "aminameric7@gmail.com",
+        "email1": "lejlaimsirovic@gmail.com"
+
     },
     "credentials": {
-        "name": "Amina",
-        "last_name": "Merić",
+        "name": "Lejla",
+        "last_name": "Imsirovic",
         "password": "Amina123",
+        "password1": "Lejla12345",
         "movie": "Čuvari formule",
         "nameToChange": "Mubina"
+
     },
     "verification_message": {
         "registartion_message": "Your account has been created."

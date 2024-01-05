@@ -24,7 +24,7 @@ beforeAll(async () => {
 
 test("user registration", async () => {
     await homePage.navigateToHomePage();
-    await registrationPage.allowCookies();
+    await homePage.allowCookies();
     await homePage.clickRegistrationButton();
     await registrationPage.enterName();
     await registrationPage.enterSurname();
@@ -33,9 +33,23 @@ test("user registration", async () => {
     await registrationPage.clickOnBirthMonth();
     await registrationPage.clickOnBirthDay();
     await registrationPage.clickOnOkButton();
-    //await registrationPage.clickGender();
-    //await registrationPage.clickGenderSpecific();
+    await registrationPage.clickGender();
+    await registrationPage.clickGenderSpecific();
     await registrationPage.clickCinema();
+    await registrationPage.clickSpecificCinema();
+    await registrationPage.clickEmailField();
+    await registrationPage.enterEmail();
+    await registrationPage.clickPasswordField();
+    await registrationPage.enterPassword();
+    await registrationPage.clickRepeatPasswordField();
+    await registrationPage.enterRepeatPassword();
+    await registrationPage.clickCookieChcekbox();
+    await registrationPage.clickConditionChcekbox();
+    await registrationPage.clickSecurityChcekbox();
+    await registrationPage.clickRegisterButton();
+    await registrationPage.clickConfirmationButton();
+    await registrationPage.confirmThatLoginPageIsLoaded();
+
 },200000);
 
 

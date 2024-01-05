@@ -9,7 +9,6 @@ const testData = JSON.parse(readFileSync(dataFilePath, "utf8"));
 
 export class MoviePrices extends BasePage {
 
-    private cookiesButton = By.xpath('//div[@class="b-cookies-agreement__buttons"]//button[@class="sc-bdVaJa cvcMub"]');
     private cinemas = By.className("sc-frDJqD l-header-nav__item eCXZFJ");
     private specificCinema = By.className("l-sublist__link");
     private priceList = By.className("s-cinema-details__link-prices");
@@ -18,10 +17,6 @@ export class MoviePrices extends BasePage {
    
     constructor(driver: WebDriver) {
         super(driver);
-    }
-
-    async allowCookies() {
-        await this.findElementAndClick(this.cookiesButton);
     }
 
     async clickCimenasDropDown() {

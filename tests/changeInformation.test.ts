@@ -4,7 +4,7 @@ import { Builder, By, WebDriver } from "selenium-webdriver";
 import { createDriver, quitDriver} from "../core/config/driver-setup";
 import { readFileSync } from "fs";
 import * as path from "path";
-import { ChangeInformation } from "../core/page-objects/change-information";
+import { ChangeInformation } from "../core/page-objects/change-information-page";
 
 const dataFilePath = path.resolve(__dirname, "../core/data/data.json");
 const testData = JSON.parse(readFileSync(dataFilePath, "utf8"));
@@ -25,7 +25,7 @@ beforeAll(async () => {
 test("change information", async () => {
     
     await homePage.navigateToHomePage();
-    await changeInformation.allowCookies();
+    await homePage.allowCookies();
     await homePage.clickInButton();
     await loginPage.enterEmail();
     await loginPage.enterPassword();
