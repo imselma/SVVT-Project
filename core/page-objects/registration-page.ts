@@ -17,9 +17,9 @@ export class RegistrationPage extends BasePage {
     private birthMonth = By.xpath('/html/body/div[3]/div[2]/div/div[1]/div[2]/div[12]');
     private birthDay = By.xpath('/html/body/div[3]/div[2]/div/div[1]/div[3]/div/div[4]/div[6]');
     private okField = By.xpath('/html/body/div[3]/div[2]/div/div[2]/button[2]/span[1]') 
-    //private genderField = By.className("sc-fMiknA ktbsVA");
-    //private genderchoice = By.className("sc-eqIVtm l-options__item egfgji");
-    private cinemaField = By.className("sc-fMiknA kleITX");
+   /* private genderField = By.className("sc-fMiknA ktbsVA");
+    private genderchoice = By.className("sc-eqIVtm l-options__item egfgji");
+    private cinemaField = By.className("sc-fMiknA kleITX");*/
     constructor(driver: WebDriver) {
         super(driver);
     }
@@ -52,18 +52,18 @@ export class RegistrationPage extends BasePage {
     async clickOnOkButton(){
         await this.findElementAndClick(this.okField);
     }
-   /* async clickGender(){
+    /*async clickGender(){
         await this.waitForElement(this.genderField, 10000);
         await this.findElementAndClick(this.genderField);
-    }*/
-   /* async clickGenderSpecific(){
+    }
+    async clickGenderSpecific(){
        await this.waitForElement(this.genderchoice, 50000);
        await this.findElementAndClick(this.genderchoice);
-    }*/
+    }
     async clickCinema(){
         await this.waitForElement(this.cinemaField, 10000);
         await this.findElementAndClick(this.cinemaField);
-    }
+    }*/
    /* async clickCinemaChoice(){
         await this.waitForElement(this.okField, 10000);
         await this.findElementAndClick(this.cinemachoice);
