@@ -17,8 +17,9 @@ export class ReservationOfTicketPage extends BasePage {
     private timeChoose = By.xpath('//div[@id="vapc"]//div[@class="sc-dqBHgY PEIlW"]//section[@class="sc-bwCtUz s-entity-details cMvHYv"]//div[@class="sc-htpNat container bIdnOx"]//main[@class="sc-hrWEMg s-entity-details__main fSvmFA"]//div[@class="sc-jTzLTM sc-hXRMBi b-entity-content bTklSN"]//ul[@class="sc-kGXeez l-tickets vXoiQ"]//li[2]//a[@class="sc-dxgOiQ l-tickets__item-link gNFPJK"]');
     private plusButton = By.xpath('//*[@id="vapc"]/div/section/div/div/div/div/div[2]/div/button[2]');
     private nextButton1=By.className('sc-bdVaJa cvcMub');
-    private seatChoose=By.xpath('//*[@id="vapc"]/div/section/div/div/div[1]/div/div[1]/div/ul/li[4]/ul/li[4]');
+    private seatChoose=By.xpath('//*[@id="vapc"]/div/section/div/div/div[1]/div/div[1]/div/ul/li[2]/ul/li[7]');
     private finalButton=By.xpath('//*[@id="vapc"]/div/section/div/div/div[2]/div[2]/button');
+    private text =By.xpath('//*[@id="vapc"]/div/section/div/div/div[2]/div[1]/h3');
     
    
     constructor(driver: WebDriver) {
@@ -63,6 +64,9 @@ export class ReservationOfTicketPage extends BasePage {
     async clickFinalButton() {
         await this.waitForElement(this.finalButton, 10000);
         await this.findElementAndClick(this.finalButton);
+    }
+    async checkText(){
+        await this.checkMatchingElements(this.text,'AQUAMAN I IZGUBLJENO KRALJEVSTVO');
     }
     
 }

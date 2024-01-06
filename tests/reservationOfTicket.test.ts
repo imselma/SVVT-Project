@@ -41,7 +41,7 @@ test("ticket reservation", async () => {
     await reservationOfTicketPage.clickNextButton1();
     await reservationOfTicketPage.clickSeatChoose();
     await reservationOfTicketPage.clickFinalButton();
-    
+    await reservationOfTicketPage.checkText();
 },40000);
 
 
