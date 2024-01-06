@@ -12,6 +12,8 @@ export class LoginPage extends BasePage {
     private email = By.id("email");
     private password = By.id("password");
     private loginButton = By.xpath('//button[@type="submit"]');
+    private profile = By.xpath('//div[@class="sc-cHGsZl header__logged dJEtQg"]//span[@class="_with-chevron"]');
+    
     constructor(driver: WebDriver) {
         super(driver);
     }
@@ -23,5 +25,8 @@ export class LoginPage extends BasePage {
     }
     async clickLogin() {
         await this.findElementAndClick(this.loginButton);
+    }
+    async locateProfile(){
+        await this.checkMatchingElements(this.profile, 'Zdravo, Mubina');
     }
 }

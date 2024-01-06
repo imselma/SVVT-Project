@@ -28,6 +28,7 @@ test("user login", async () => {
     await loginPage.enterEmail();
     await loginPage.enterPassword();
     await loginPage.clickLogin();
+    await loginPage.locateProfile();
 },30000);
 
 
